@@ -1,8 +1,10 @@
 FROM alpine
 
-RUN apk add py3-bottle py3-requests make bash git nodejs \
- && git clone https://github.com/c9/core.git /root/.c9 && cd /root/.c9
-
+RUN apk add py3-bottle py3-requests make bash git nodejs && \
+    git clone https://github.com/c9/core.git /root/.c9 && \
+    cd /root/.c9 && \
+    scripts/install-sdk.sh
+    
 RUN mkdir /workspace
 VOLUME /workspace
 WORKDIR /workspace

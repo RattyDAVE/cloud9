@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN apk add --update --no-cache py3-bottle py3-requests g++ make tmux curl bash git nodejs npm\
+RUN apk add --update --no-cache g++ py3-bottle py3-requests make python tmux curl bash git --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ nodejs=8.9.3-r1 \
  && git clone -b master --single-branch https://github.com/c9/core.git /root/.c9 && cd /root/.c9 \
  && mkdir -p ./node/bin ./bin ./node_modules \		
  && ln -sf "`which tmux`" ./bin/tmux \		

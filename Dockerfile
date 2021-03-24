@@ -1,6 +1,7 @@
 FROM alpine
 
-RUN apk add py3-bottle py3-requests make bash git nodejs gcc g++ && \
+RUN apk add py3-bottle py3-requests bash git nodejs && \
+    apk add make gcc g++ && \
     git clone https://github.com/c9/core.git /root/.c9 && \
     cd /root/.c9 && \
     scripts/install-sdk.sh

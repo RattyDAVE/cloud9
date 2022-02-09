@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:edge
 
 RUN apk add py3-bottle py3-requests bash git nodejs && \
     apk add make gcc g++ python2 tmux nodejs npm && \
